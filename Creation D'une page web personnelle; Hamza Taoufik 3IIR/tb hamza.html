@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creation d'une page web Perssonnelle</title>
+
+    <style>
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: wheat;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid blue;
+    background-color: white;
+    border-radius: 8px;
+}
+
+
+h1 {
+    color: teal;
+    text-align: center;
+}
+
+h2 {
+    color:  darkgrey;
+}
+
+p {
+    font-size: 1.1em;
+    color:brown;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #2980B9;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1A5276;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1.1em;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+
+    input, textarea {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
+
+
+
+
+
+    </style>
+   
+</head>
+<body>
+    <h1>Un Page Web Personnelle</h1> 
+
+<section>
+    <h2>À propos de moi</h2>
+    <p>Je ssuis hamza Taoufik,j'ai 20ans, j'habite a berchid,Exactement a ouled Abou </p>
+</section>
+
+<section>
+    <h2>Hobbies</h2>
+    <ul>
+        <li>Lecture</li>
+        <li>Voyage</li>
+        <li>Musique</li>
+    </ul>
+</section>
+
+
+     <hr>
+
+<section>
+    <h2>À propos de moi</h2>
+    <p>Je m'appelle Hamza Taoufik j'habite a Berchid exactement a oulad abbou.</p>
+    <img src="me.jfif" alt="Image de moi" width="150" height="150">
+</section>
+
+
+
+<hr>
+<section>
+    <h2>Hobbies</h2>
+    <ul>
+        <li>Lecture</li>
+        <li>Musique</li>
+        <li>Voyage</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Objectifs</h2>
+    <ol>
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur iste laudantium voluptates quo alias expedita repellat. Distinctio unde voluptas officiis, voluptate sapiente ducimus deleniti, alias, est debitis ea nam perspiciatis..</li>
+        <li>Créer un projet personnel.</li>
+    </ol>
+</section>
+<hr>
+<section>
+    <h2>Tableau d'Amis</h2>
+    <table border="1">
+        <tr>
+            <th>Nom</th>
+            <th>Âge</th>
+            <th>Ville</th>
+            <th>Profil</th>
+        </tr>
+        <tr>
+            <td>Achraf</td>
+            <td>21</td>
+            <td>Ouled Abbou</td>
+            <td><a href="lien_profil_ami1.html">Voir Profil</a></td>
+        </tr>
+        <tr>
+            <td>Seif</td>
+            <td>20</td>
+            <td>Settat</td>
+            <td><a href="lien_profil_ami2.html">Voir Profil</a></td>
+        </tr>
+        <tr>
+            <td>Nasr</td>
+            <td>20</td>
+            <td>CASA</td>
+            <td><a href="lien_profil_ami3.html">Voir Profil</a></td>
+        </tr>
+    </table>
+</section>
+<hr>
+<section>
+    <h2>Formulaire de Contact</h2>
+    <form id="contactForm">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+let nom = document.getElementById("nom").value;
+let email = document.getElementById("email").value;
+
+if (nom === "" || email === "") {
+    alert("Veuillez remplir tous les champs requis.");
+    event.preventDefault(); 
+} else {
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Veuillez entrer un email valide.");
+        event.preventDefault();
+    } else {
+        alert("Formulaire soumis avec succès !");
+    }
+}
+});
+
+</script>
+
+
+</body>
+</html>
